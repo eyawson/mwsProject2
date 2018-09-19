@@ -1,0 +1,24 @@
+{
+    "name": "Restaurant - reviews",
+    "short_name": "R-reviews",
+    "start_url": "/index.html",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#1c304a",
+    "description": "#Udacity #Google MWS project",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "/img/icons/rr192.png",
+            "type": "image/png",
+            "sizes": "192x192"   
+        },
+        {
+            "src": "/img/icons/rr512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
