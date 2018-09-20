@@ -1,7 +1,7 @@
 importScripts('js/idb.js');
 
-var staticCacheName = 'precache-v2';
-var dynamicCacheName = 'dynamic-v2';
+var staticCacheName = 'precache-v4';
+var dynamicCacheName = 'dynamic-v4';
 
 
 self.addEventListener('install', function(event) {
@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
         return cache.addAll([
             '/',
             '/js/dbhelper.js',
-            '/js/idb.js',
+            //'/js/idb.js',
             '/js/main.js',
             '/index.html',
             '/restaurant.html',

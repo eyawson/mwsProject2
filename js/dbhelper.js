@@ -15,7 +15,17 @@ class DBHelper {
   /**
    * Fetch all restaurants.
    */
+  
   static fetchRestaurants(callback) {
+    fetch(DBHelper.DATABASE_URL)
+          .then(response => response.json())
+          .then((fetchedRestaurants) => {
+            //DBHelper.placeRestaurantsIntoIDB(fetchedRestaurants);
+            console.log('restaurants from fetch');
+            callback(null, fetchedRestaurants);
+          });
+  }
+   /* static fetchRestaurants(callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', DBHelper.DATABASE_URL);
     xhr.onload = () => {
@@ -29,7 +39,7 @@ class DBHelper {
       }
     };
     xhr.send();
-  }
+  } */
 
   /**
    * Fetch a restaurant by its ID.
