@@ -1,7 +1,7 @@
 importScripts('js/idb.js');
 
-var staticCacheName = 'precache-v1';
-var dynamicCacheName = 'dynamic-v1';
+var staticCacheName = 'precache-v2';
+var dynamicCacheName = 'dynamic-v2';
 
 
 self.addEventListener('install', function(event) {
