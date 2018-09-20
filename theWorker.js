@@ -1,7 +1,7 @@
 importScripts('js/idb.js');
 
-var staticCacheName = 'precache-v4';
-var dynamicCacheName = 'dynamic-v4';
+var staticCacheName = 'precache-v5';
+var dynamicCacheName = 'dynamic-v5';
 
 
 self.addEventListener('install', function(event) {
@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
         return cache.addAll([
             '/',
             '/js/dbhelper.js',
-            //'/js/idb.js',
+            '/js/idb.js',
             '/js/main.js',
             '/index.html',
             '/restaurant.html',
@@ -29,6 +29,14 @@ self.addEventListener('install', function(event) {
         ]);
     })
 )
+});
+
+//create idb obect store only if there is no previous object store
+
+var dbPromise = db.open('review-store', 1, function(db) {
+    if (!db.objectStoreNames.contains('review')) {
+        db.createObjectStore('review', {keyPath: 'id'})
+    }
 });
 
 self.addEventListener('activate', function(event) {
