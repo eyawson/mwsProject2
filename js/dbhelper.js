@@ -179,10 +179,20 @@ class DBHelper {
 
 }
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/theWorker.js').then(function() {
-    console.log('Service worker registered!');
-  }).catch(function(err) {
-    console.log(err);
-  })
+const pwa = () => {
+  //Check if service worker is supported
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/theWorker.js').then(function() {
+      console.log('Service worker registered!');
+    }).catch(function(err) {
+      console.log(err);
+    })
+  }
+  //Check for IDB support in browser
+  if (!('indexedDB' in window)) {
+    console.log('This browser doesn\'t support IndexedDB');
+    return;
+  }
 }
+
+pwa();
